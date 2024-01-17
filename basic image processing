@@ -1,0 +1,23 @@
+int main() {
+    // Read an image from file
+    cv::Mat image = cv::imread("path/to/your/image.jpg");
+
+    // Check if the image was successfully loaded
+    if (image.empty()) {
+        std::cerr << "Error: Could not read the image." << std::endl;
+        return -1;
+    }
+
+    // Convert the image to grayscale
+    cv::Mat grayImage;
+    cv::cvtColor(image, grayImage, cv::COLOR_BGR2GRAY);
+
+    // Display the grayscale image
+    cv::imshow("Grayscale Image", grayImage);
+    cv::waitKey(0); // Wait for a key press
+
+    // Save the processed image
+    cv::imwrite("path/to/your/processed_image.jpg", grayImage);
+
+    return 0;
+}
