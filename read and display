@@ -1,0 +1,16 @@
+int main() {
+    // Read an image from file
+    cv::Mat image = cv::imread("path/to/your/image.jpg");
+
+    // Check if the image was successfully loaded
+    if (image.empty()) {
+        std::cerr << "Error: Could not read the image." << std::endl;
+        return -1;
+    }
+
+    // Display the original image
+    cv::imshow("Original Image", image);
+    cv::waitKey(0); // Wait for a key press
+
+    return 0;
+}
